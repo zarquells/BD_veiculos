@@ -1,6 +1,5 @@
 -- Active: 1741127207592@@127.0.0.1@5432@db_rentvehicles@public
-CREATE DATABASE db_rentvehicles
-
+CREATE DATABASE IF NOT EXISTS db_rentvehicles;
 CREATE TABLE tbl_client(
     pk_IDclient     SERIAL PRIMARY KEY,
     name_client     VARCHAR(120) NOT NULL,
@@ -8,7 +7,8 @@ CREATE TABLE tbl_client(
     phone_client    CHAR(11) NOT NULL
 );
 
--- CREATE TYPE rent AS ENUM('alugado', 'disponivel');
+CREATE TYPE rent AS ENUM('alugado', 'disponivel');
+
 CREATE TABLE tbl_vehicle(
     pk_IDvehicle    SERIAL PRIMARY KEY,
     model_vehicle   VARCHAR(120) NOT NULL,
